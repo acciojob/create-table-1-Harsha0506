@@ -1,20 +1,15 @@
-let table = document.getElementById("sampleTable");
-let rowNumber = 3;  // start from 3
+function insert_Row() {
 
-function insert_Row(){
+    let table = document.getElementById("sampleTable");
 
-    let row = document.createElement("tr");
+    // Insert row at index 0 (TOP)
+    let newRow = table.insertRow(0);
 
-    let cell1 = document.createElement("td");
-    cell1.textContent = `New Cell1`;
+    // Insert two cells
+    let cell1 = newRow.insertCell(0);
+    let cell2 = newRow.insertCell(1);
 
-    let cell2 = document.createElement("td");
-    cell2.textContent = `New Cell2`;
-
-    row.appendChild(cell1);
-    row.appendChild(cell2);
-
-    table.appendChild(row);
-
-    table.insertBefore(row, table.firstChild);
+    // Add exact required text
+    cell1.textContent = "New Cell1";
+    cell2.textContent = "New Cell2";
 }
